@@ -53,8 +53,8 @@ class FFGModel(BaseModel):
         # TODO : To prevent this error, I add same loss value.
         # TODO : fix this later
         return OrderedDict([
-            ('loss', self.loss.cpu().data.numpy()[0]),
-            ('loss2', self.loss.cpu().data.numpy()[0])
+            ('loss', self.loss.cpu().item()),
+            ('loss2', self.loss.cpu().item())
         ])
 
     def get_visuals(self, sample_single_image=True):
